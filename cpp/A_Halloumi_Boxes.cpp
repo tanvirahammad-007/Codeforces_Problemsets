@@ -1,31 +1,30 @@
 #include <bits/stdc++.h>
+#define optimize() ios::sync_with_stdio(false); cin.tie(nullptr);
+ 
 using namespace std;
 
 int main()
 {
-    int t;
+    optimize();
+
+    int t{};
     cin >> t;
     while (t--)
     {
-        int n, k;
+        int n{}, k{};
         cin >> n >> k;
-        long long sum = 0;
+        int arr[n];
         for (int i = 0; i < n; i++)
         {
-            int x;
-            cin >> x;
-            sum += x;
+            cin >> arr[i];
         }
-        if (sum % 2 == 1)
+        if (is_sorted(arr, arr + n) || k > 1)
         {
             cout << "YES\n";
         }
         else
         {
-            if ((n * k) % 2 == 0)
-                cout << "YES\n";
-            else
-                cout << "NO\n";
+            cout << "NO\n";
         }
     }
     return 0;
