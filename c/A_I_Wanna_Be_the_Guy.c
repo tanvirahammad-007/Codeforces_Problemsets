@@ -3,7 +3,7 @@ int main()
 {
     int n;
     scanf("%d", &n);
-    int level[n+1];
+    int level[n + 1];
     for (int i = 1; i <= n; i++)
     {
         level[i] = 0;
