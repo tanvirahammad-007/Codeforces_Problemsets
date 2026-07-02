@@ -35,7 +35,6 @@ int main()
     else
     {
         ofstream file(st);
-        file << "#include <iostream>\nusing namespace std;\n\nint main() {\n    return 0;\n}\n";
         file.close();
     }
 
