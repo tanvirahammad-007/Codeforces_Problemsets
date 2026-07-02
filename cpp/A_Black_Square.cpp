@@ -14,24 +14,16 @@ int main()
 {
     op();
 
-    int n{};
-    cin >> n;
-    vector<int> v(n);
-    int sum{};
-    for (auto &x : v)
+    vector<int> v(4);
+    cin >> v[0] >> v[1] >> v[2] >> v[3];
+    string st;
+    cin >> st;
+    long long total{};
+    for (auto &x : st)
     {
-        cin >> x;
-        sum += x;
+        int y = (x - '0') - 1;
+        total += v[y];
     }
-
-    int cnt{};
-    for (int i = 1; i <= 5; i++)
-    {
-        int x = sum + i;
-        if (x % (n + 1) != 1)
-            cnt++;
-    }
-    cout << cnt << br;
-
+    cout << total << "\n";
     return 0;
 }

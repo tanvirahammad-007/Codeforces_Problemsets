@@ -16,22 +16,18 @@ int main()
 
     int n{};
     cin >> n;
-    vector<int> v(n);
-    int sum{};
-    for (auto &x : v)
+    if (n >= 0)
+        cout << n << br;
+    else
     {
-        cin >> x;
-        sum += x;
+        string st = to_string(n);
+        int last = n / 10;
+        st.erase((st.size() - 2), 1);
+        int bLast = stoi(st);
+        if (last > bLast)
+            cout << last << br;
+        else
+            cout << bLast << br;
     }
-
-    int cnt{};
-    for (int i = 1; i <= 5; i++)
-    {
-        int x = sum + i;
-        if (x % (n + 1) != 1)
-            cnt++;
-    }
-    cout << cnt << br;
-
     return 0;
 }

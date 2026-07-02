@@ -14,24 +14,27 @@ int main()
 {
     op();
 
-    int n{};
-    cin >> n;
-    vector<int> v(n);
-    int sum{};
-    for (auto &x : v)
-    {
-        cin >> x;
-        sum += x;
-    }
+    int t{};
+    cin >> t;
 
-    int cnt{};
-    for (int i = 1; i <= 5; i++)
+    while (t--)
     {
-        int x = sum + i;
-        if (x % (n + 1) != 1)
-            cnt++;
+        int n{};
+        cin >> n;
+        string st;
+        cin >> st;
+        if (n < 5 || n > 5)
+        {
+            no;
+            continue;
+        }
+        string main = "Timru";
+        sort(all(st));
+        if (st == main)
+            yes;
+        else
+            no;
     }
-    cout << cnt << br;
 
     return 0;
 }

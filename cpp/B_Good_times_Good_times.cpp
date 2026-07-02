@@ -14,24 +14,19 @@ int main()
 {
     op();
 
-    int n{};
-    cin >> n;
-    vector<int> v(n);
-    int sum{};
-    for (auto &x : v)
-    {
-        cin >> x;
-        sum += x;
-    }
+    int t{};
+    cin >> t;
 
-    int cnt{};
-    for (int i = 1; i <= 5; i++)
+    while(t--)
     {
-        int x = sum + i;
-        if (x % (n + 1) != 1)
-            cnt++;
+        int n{};
+        if(n <= 10 | n % 10 == 0)
+        {
+            cout << 10 << br;
+            continue;
+        }
+        
     }
-    cout << cnt << br;
 
     return 0;
 }

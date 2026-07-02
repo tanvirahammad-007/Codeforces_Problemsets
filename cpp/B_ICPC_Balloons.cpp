@@ -19,11 +19,24 @@ int main()
 
     while (t--)
     {
-        int n{}, k{};
-        cin >> n >> k;
-        
-		int need = (k - 1) / (n - 1);
-		cout << k + need << endl;
+        int n{};
+        cin >> n;
+        string st;
+        cin >> st;
+        vector<int> v(27, 0);
+        int cnt{};
+        for (auto &x : st)
+        {
+            int y = x - 'A';
+            if (v[y] == 0)
+            {
+                cnt += 2;
+                v[y]++;
+            }
+            else
+                cnt++;
+        }
+        cout << cnt << br;
     }
 
     return 0;
