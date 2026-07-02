@@ -26,11 +26,20 @@ int main()
     }
 
     st += ".cpp";
-    ofstream file(st);
+    ifstream check_file(st);
 
-    file.close();
+    if (check_file.good())
+    {
+        check_file.close();
+    }
+    else
+    {
+        ofstream file(st);
+        file << "#include <iostream>\nusing namespace std;\n\nint main() {\n    return 0;\n}\n";
+        file.close();
+    }
 
-    system(("start " + st).c_str()); 
+    system(("start " + st).c_str());
 
     cout << st;
     return 0;
